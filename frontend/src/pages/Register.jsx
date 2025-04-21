@@ -12,6 +12,9 @@ const Register = () => {
         password: ""
     })
 
+    const navigate = useNavigate();
+
+
 
     const handleChanges = (e) => {
         setValues({ ...values, [e.target.name]: e.target.value })
@@ -21,7 +24,10 @@ const Register = () => {
         e.preventDefault()
         try {
             const responce = await axios.post("http://localhost:3000/auth/register", values)
-            console.log(responce)
+            if(responce.status===201 ){
+                navigate("/login")
+
+            }
         } catch (error) {
             console.log(error)
         }

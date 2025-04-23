@@ -24,7 +24,7 @@ const Register = () => {
         e.preventDefault()
         try {
             const responce = await axios.post("http://localhost:3000/auth/register", values)
-            if(responce.status===201 ){
+            if (responce.status === 201) {
                 navigate("/login")
 
             }
@@ -35,14 +35,13 @@ const Register = () => {
 
     }
     return (
-        <div className='flex justify-center items-center h-screen'>
-            <div className='shadow-lg  px-8 py-5 border w-96'>
+        <div className='flex justify-center bg-amber-50 items-center h-screen'>
+            <div className='shadow-lg bg-white  px-8 py-5 border w-96'>
                 <h2 className='text-lg  font-bold mb-4'>Register</h2>
                 <form
                     onSubmit={handleSubmit}>
                     <div className='mb-4'>
                         <label
-                            htmlFor="name"
                             className='text-gray-700 block'>
                             Name
                         </label>
@@ -55,8 +54,8 @@ const Register = () => {
                         />
                     </div>
                     <div className='mb-4'>
-                        <label
-                            htmlFor="email">
+                        <label className='text-gray-700 block'
+                        >
                             Email
                         </label>
                         <input
@@ -84,7 +83,7 @@ const Register = () => {
                     </div>
                     <button
                         type="submit"
-                        className='bg-amber-300 text-white px-4 py-2 rounded w-full hover:bg-amber-600 transition duration-200'>
+                        className='bg-amber-500 text-white px-4 py-2 rounded w-full hover:bg-amber-600 transition duration-200'>
                         Submit
                     </button>
                 </form>
